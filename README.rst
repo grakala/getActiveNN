@@ -11,4 +11,4 @@ Syntax
  Usage:
  getActiveNN.py
 
-Set *ConfLoc* with the directory location where hdfs-site.xml exists in script.
+Set *ConfLoc* in the script with the directory location where hdfs-site.xml exists.
