@@ -1,6 +1,6 @@
 import subprocess as SP
 import sys
-ConfLoc='/tmp'
+ConfLoc='/etc/hadoop/conf'
 
 # Get nameservice name
 args = ["hdfs --config "+ConfLoc+" getconf -confKey dfs.nameservices"]
