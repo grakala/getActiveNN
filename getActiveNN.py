@@ -1,6 +1,25 @@
+#! /usr/bin/python
 import subprocess as SP
-import sys
-ConfLoc='/etc/hadoop/conf'
+import sys,getopt
+
+# Parse arguments
+argv=sys.argv[1:]
+if len(argv) == 0:
+ print 'getActiveNN.py -c <hdfs-site.xml location>'
+ sys.exit(2)
+
+try:
+ opts, args = getopt.getopt(argv,"hc:",["config_loc="])
+except getopt.GetoptError:
+ print 'getActiveNN.py -c <hdfs-site.xml location>'
+ sys.exit(2)
+
+for opt, arg in opts:
+ if opt == '-h':
+  print 'getActiveNN.py -c <hdfs-site.xml location>'
+  sys.exit(2)
+ elif opt in ("-c", "--config_loc"):
+  ConfLoc = arg
 
 # Get nameservice name
 args = ["hdfs --config "+ConfLoc+" getconf -confKey dfs.nameservices"]
