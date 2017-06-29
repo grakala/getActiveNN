@@ -9,6 +9,7 @@ Syntax
 ::
 
  Usage:
- getActiveNN.py
+ getActiveNN.py -c[--config_loc=] <hdfs-site.xml location>
+ Example : getActiveNN.py --config_loc=/etc/hadoop/conf
 
-Set *ConfLoc* in the script with the directory location where hdfs-site.xml exists.
+*config_loc* is the directory location where hdfs-site.xml exists.
